@@ -1,0 +1,434 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+nav {
+  margin: 10px 0;
+}
+
+nav a {
+  color: #007bff;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: white;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button.delete {
+  background-color: red;
+}
+
+button.delete:hover {
+  background-color: darkred;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+input[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+  background-color: #218838;
+}
+
+input[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+/* BookList Styles */
+.book-list-container {
+  padding: 20px;
+}
+
+.book-list-container h1 {
+  margin-bottom: 20px;
+}
+
+.book-list-container nav {
+  margin-bottom: 20px;
+}
+
+.book-list-container ul {
+  list-style: none; /* Remove default list style */
+  padding: 0;
+  display: grid; /* Use CSS Grid to display books side by side */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
+  gap: 20px; /* Space between grid items */
+}
+
+.book-list-container li {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.book-list-container li:hover {
+  transform: scale(1.05); /* Add a hover effect */
+}
+
+.book-list-container .book-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.book-list-container button.delete {
+  background-color: red;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.book-list-container button.delete:hover {
+  background-color: darkred;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .book-list-container ul {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .book-list-container ul {
+    grid-template-columns: 1fr; /* Stack items in a single column on small screens */
+  }
+}
+
+
+/* SearchBook Styles */
+.search-book-container {
+  padding: 20px;
+}
+
+.search-book-container input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-book-container button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-book-container button:hover {
+  background-color: #0056b3;
+}
+
+.search-book-container ul {
+  margin-top: 20px;
+}
+
+.search-book-container li {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* AddBook / EditBook Styles */
+.add-edit-book-container {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.add-edit-book-container h1 {
+  margin-bottom: 20px;
+}
+
+.add-edit-book-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-edit-book-container .form-group {
+  margin-bottom: 15px;
+}
+
+.add-edit-book-container .form-group label {
+  margin-bottom: 5px;
+}
+
+.add-edit-book-container input[type="text"],
+.add-edit-book-container input[type="number"] {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.add-edit-book-container input[type="submit"] {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.add-edit-book-container input[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.add-edit-book-container input[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* AddBook / EditBook Styles */
+.add-edit-book-container {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.add-edit-book-container h1 {
+  margin-bottom: 20px;
+}
+
+.add-edit-book-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-edit-book-container .form-group {
+  margin-bottom: 15px;
+}
+
+.add-edit-book-container .form-group label {
+  margin-bottom: 5px;
+}
+
+.add-edit-book-container input[type="text"],
+.add-edit-book-container input[type="number"] {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.add-edit-book-container input[type="submit"] {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.add-edit-book-container input[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.add-edit-book-container input[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* MemberList Styles */
+.member-list-container {
+  padding: 20px;
+}
+
+.member-list-container h1 {
+  margin-bottom: 20px;
+}
+
+.member-list-container ul {
+  padding: 0;
+}
+
+.member-list-container li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.member-list-container .member-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.member-list-container button.delete {
+  background-color: red;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.member-list-container button.delete:hover {
+  background-color: darkred;
+}
+
+/* AddMember Styles */
+.add-member-container {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.add-member-container h1 {
+  margin-bottom: 20px;
+}
+
+.add-member-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-member-container .form-group {
+  margin-bottom: 15px;
+}
+
+.add-member-container .form-group label {
+  margin-bottom: 5px;
+}
+
+.add-member-container input[type="text"],
+.add-member-container input[type="email"],
+.add-member-container input[type="tel"] {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.add-member-container input[type="submit"] {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.add-member-container input[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.add-member-container input[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
